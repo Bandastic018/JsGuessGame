@@ -1,21 +1,31 @@
-// //Requesting user to enter username
+// Requesting user to enter username
 
-// let username = prompt("Please enter username.");
+let username = prompt("Please enter username.");
 
-// // welcome user to the Game.
+// Welcome user to the Game.
 
-// console.log(`${username}, you are welcomed to Banda Guessing Game!!!`);
+console.log(`${username}, you are welcomed to Guessing Game!!!`);
 
-// //Variable declarations for loop
+// Variable declarations for loop
 
-// let points = 0;
-// let level = 1;
-// let maxStage = 10;
+let points = 0;
+let level = 1;
+let maxStage = 10;
 
-//Using the For loop
-for (let i=2; i > 10; i++){
-let comPuter= Math.floor(Math.random()* i ) + 1;
-let userPlayer=parseInt(prompt(`Please guess a number between 1 and ${i}`));
-
-    console.log(userPlayer);
+// Using the For loop
+for (let i = 2; i < 11;) {
+  console.log(`Welcome to stage ${level}`)
+  let comPuter = Math.floor(Math.random() * i) + 1;
+  let userPlayer = parseInt(prompt(`Guess a number between 1 and ${i}: `));
+  
+ if (comPuter === userPlayer){
+   i++;
+   points++;
+   level++;
+   console.log(`Hurray, You now have ${points} points and have moved to stage ${level}`);
+     
+ }else {
+   console.log(`Sorry, You misse. Please try again.`);
+ }
 }
+
